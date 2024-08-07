@@ -24,13 +24,6 @@ slice() | slice(indexstart, indexend) | **indexstart:-** The index of the first 
 split() | split(separator, limit) | **separator:-** The pattern describling where ech split should occurrence. A string or an object. **limit:-** A non-negative integer specifying a limit on the number of substring to be included in the array. | A new string | ```string.split(separator, limit)```
 padStart() | padStart(targetLength, padString) | **targetLength:-** The length of the resulting string onc the current str has been padded. **padStart:-** The string to pad the current str with. | A string to pad specidied taretLength with pdstring appliced from the start. | ```string.padStart(targetLength, limit)```
 padEnd() | padEnd(targetLength, padString) | **targetLength:-** The length of the resulting string onc the current str has been padded. **padStart:-** The string to pad the current str with. | A string to pad specidied taretLength with pdstring appliced at the current str. | ```string.padEnd(targetLength, limit)```
-repeat() | repeat(count) | **count:-** An integer between 0 and +Infinity, indicating the number of times to repeat the string. | A new string |  ```string.repeat(count)```
-replace() | replace(pattern, replacement) | **pattern:-** Can be a string or an object with a Symbol.replace method — the typical example being a regular expression. **replacement:-** eeplace string | A new string | ```string.replace(pattern, replacement)```
-replaceAll() | replaceAll(pattern, replacement) | **pattern:-** Can be a string or an object with a Symbol.replace method — the typical example being a regular expression. **replacement:-** eeplace string | A new string | ```string.replaceAll(pattern, replacement)```
-search() | search(regexp) | **regexp:-** A regular expression object | The index of the first match between the regular expression and the given string, or -1 if no match was found. | ```string.search(regexp)```
-slice() | slice(indexStart, indexEnd) | **indexStart:-** The index of the first character to include in the returned substring. **indexEnd:-** The index of the first character to exclude from the returned substring. | A new string | ```string.slice(indexStart, indexEnd)```
-split() | split(separator, limit) | **separator:-** The pattern describing where each split should occur. **limit:-** A non-negative integer specifying a limit on the number of substrings to be included in the array. | An array | ```string.split(separator, limt)```
-startsWith() | startsWith(searchString, position) | **searchString:-** The characters to be searched for at the start of this string. **position:-** The start position at which searchString is expected to be found (the index of searchString's first character). Defaults to 0. | true and false  | ```string.startsWith(searchString,position)```
 substring() | substring(indexStart, indexEnd) | **indexStart:-** The index of the first character to include in the returned substring. **indexEnd:-**The index of the first character to exclude from the returned substring. | A new sting | ```string.substring(indexStart, indexEnd)```
 toLowerCase() | toLowerCase(null) | --- | A new string | ```sting.toLowerCase()``` 
 toUpperCase() | toUpperCase(null) | --- | A new string | ```string.toUpperCase()```
@@ -39,8 +32,6 @@ valueOf() | valueOf(null) | --- | A string representing the primitive value of a
 trim() | trim(null) |  --- | A new string | ```string.trim()```
 trimStart() | trimStart(null) trimLeft(null) | --- | A new string | ```string.trimStart()```
 trimEnd() | trimEnd() trimRight() | --- | A new String | ```string.trimEnd()```
-
-
 
 
 
