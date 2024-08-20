@@ -112,24 +112,22 @@
 
 
 // class 
+// class CreateUser {
+//     constructor(firstName, lastName, gmail, BornYear){
+//             this.firstName = firstName;
+//             this.lastName = lastName;
+//             this.gmail = gmail;
+//             this.BornYear = BornYear;
+//     }
 
+//     AgeCalculate(){
+//         return `${this.firstName} age is ${2024 - this.BornYear}`;
+//     }
 
-class CreateUser {
-    constructor(firstName, lastName, gmail, BornYear){
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.gmail = gmail;
-            this.BornYear = BornYear;
-    }
-
-    AgeCalculate(){
-        return `${this.firstName} age is ${2024 - this.BornYear}`;
-    }
-
-    personDetails(){
-        return `Person name is ${this.firstName} ${this.lastName} and your age is ${2024 - this.BornYear}`
-    }
-}
+//     personDetails(){
+//         return `Person name is ${this.firstName} ${this.lastName} and your age is ${2024 - this.BornYear}`
+//     }
+// }
 
 // console.log(CreateUser.prototype);
 
@@ -140,25 +138,161 @@ class CreateUser {
 
 // tow class assimble in extends keyword
 
-class rating extends CreateUser {
+// class rating extends CreateUser {
 
-    constructor(rating, firstName, lastName, gmail, BornYear){
+//     constructor(rating, firstName, lastName, gmail, BornYear){
 
-        super(firstName, lastName, gmail, BornYear);
+//         super(firstName, lastName, gmail, BornYear);
 
-        this.rating = rating;
+//         this.rating = rating;
 
-    }
+//     }
 
-    get PersonRating(){
-        return `Person name is ${this.firstName} and rating ${this.rating}`;
-    }
+//     get PersonRating(){
+//         return `Person name is ${this.firstName} and rating ${this.rating}`;
+//     }
 
+// }
+
+// const person1 = new rating(5 ,"chandan","thakur","abc@gmail.com",2000);
+
+// console.log(person1);
+// console.log(person1.PersonRating);
+
+// console.log(person1.AgeCalculate());
+
+
+
+// question 1
+const chandan = {
+   name: "Chandan Thalur",
+   age: 22,
+   address: "Sodala",
+   phone: 7073251686
 }
 
-const person1 = new rating(5 ,"chandan","thakur","abc@gmail.com",2000);
 
-console.log(person1);
-console.log(person1.PersonRating);
+// console.log(chandan);
+// console.log(chandan.prototype);
+// console.log(chandan.__proto__);
 
-console.log(person1.AgeCalculate());
+
+
+// question 2
+const mydate = new Date();
+
+// console.log(mydate.getTime());
+
+mydate.getTime = function(){
+   return `This time is wromg`;
+}
+
+// console.log(mydate.getTime());
+
+const myfunction = mydate.getTime();
+// console.log(myfunction);
+
+
+// question 3
+const object = {
+   getValue() {
+      return this.value;
+   },
+   getAddValue() {
+      return this.value * 5;
+   }
+}
+
+function val(value){
+   this.value = value
+}
+
+Object.assign(val.prototype, object);
+
+const a = new val(4);
+// console.log(a.getValue());
+
+const b = new val(10);
+// console.log(b.getAddValue());
+
+// question 4
+const o = {
+   a:1,
+   b:2,
+   __proto__: {
+      b:3,
+      c:4,
+      __proto__: {
+         d:5
+      }
+   },
+}
+
+// console.log(o);
+
+// console.log(o.a);
+// console.log(o.b);
+// console.log(o.c);
+// console.log(o.d);
+
+
+// question 5
+const object1  = {
+   value: 1,
+   getValue(){
+      return this.value + 5;
+   }
+}
+
+const person = {
+   name: "chandan thakur",
+   age: 22,
+   __proto__: object1
+}
+
+console.log(object1);
+console.log(person);
+
+person.value = 10;
+
+let abc = person.getValue();
+// console.log(abc);
+
+
+const ravi = {
+   name: "Chandan Thalur",
+   age: 22,
+   address: "Sodala",
+   phone: 7073251686
+}
+
+const prototype = {
+   getAge(val){
+      return `val +  5`;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
