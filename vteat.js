@@ -1,298 +1,295 @@
-// const obj_method = {
-//     a: function (){
-//         console.log(`Yore age is ${2024 - this.age}`)
-//     },
-//     b: function (){
-//         console.log(`Person name is ${this.firstName} ${this.lastName} and your age is ${this.year}`)
-//     }
-// }
-
-// const obj_method = {
-//     AgeCalculate: function (){
-//         console.log(`Yore age is ${2024 - this.age}`)
-//     },
-//     details: function (){
-//         console.log(`Person name is ${this.firstName} ${this.lastName} and your age is ${this.year}`)
-//     }
-// }
-
-
-// function CreateUser(firstName, lastName, gmail, BornYear){
-//     const obj = {};
-
-//     obj.firstName = firstName;
-//     obj.lastName = lastName;
-//     obj.gmail = gmail;
-//     obj.age = BornYear;
-//     obj.year = 2024 - BornYear;
-
-//     // obj.AgeCalculate = function (){
-//     //     console.log(`Yore age is ${2024 - this.age}`)
-//     // }
-//     // obj.details = function (){
-//     //     console.log(`Person name is ${this.firstName} ${this.lastName} and your age is ${this.year}`)
-//     // }
-
-//     obj.AgeCalculate = obj_method.a;
-//     obj.details = obj_method.b;
-
-//     return obj;
-// }
-
-
-// function prototype 
-// function CreateUser(firstName, lastName, gmail, BornYear){
-
-//     // const obj = Object.create(obj_method);
-//     const obj = Object.create(CreateUser.prototype);
-
-//     obj.firstName = firstName;
-//     obj.lastName = lastName;
-//     obj.gmail = gmail;
-//     obj.age = BornYear;
-//     obj.year = 2024 - BornYear;
-
-//     return obj;
-// }
-
-// CreateUser.prototype.AgeCalculate = function (){
-//     return `${this.firstName} age is ${this.year}`;
-// };
-
-// CreateUser.prototype.personDetails = function (){
-//     return `Person name is ${this.firstName} ${this.lastName} and your age is ${this.year}`;
-// }
-
-// const person1 = CreateUser("Chandan","Thakur","abc@gmail.com","2000");
-// const person2 = CreateUser("Rahul","Sain","tygdf@gmail.com",2002);
-
-// console.log(person1.AgeCalculate());
-// console.log(person1.personDetails());
-// // console.log(CreateUser.prototype);  //{}
-
-// console.log(person2.AgeCalculate());
-// console.log(person2.personDetails());
-
-
-
-
-// new keyword 
-// 1. object create
-// 2. return 
-
-// function CreateUser(firstName, lastName, gmail, BornYear){
-
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-//     this.gmail = gmail;
-//     this.BornYear = BornYear;
-
-// }
-
-// CreateUser.prototype.AgeCalculate = function (){
-//     return `${this.firstName} age is ${2024 - this.BornYear}`;
-// };
-
-// CreateUser.prototype.personDetails = function (){
-//     return `Person name is ${this.firstName} ${this.lastName} and your age is ${this.BornYear}`;
-// }
-
-// const person1 = new CreateUser("Chandan","Thakur","abc@gmail.com","2000");
-// const person2 = new CreateUser("Rahul","Sain","tygdf@gmail.com",2002);
-
-// console.log(person1.AgeCalculate());
-// console.log(person1.personDetails());
-// // console.log(CreateUser.prototype);  //{}
-
-// console.log(person2.AgeCalculate());
-// console.log(person2.personDetails());
-
-// console.log(CreateUser.prototype);
-
-
-
-// class 
-// class CreateUser {
-//     constructor(firstName, lastName, gmail, BornYear){
-//             this.firstName = firstName;
-//             this.lastName = lastName;
-//             this.gmail = gmail;
-//             this.BornYear = BornYear;
-//     }
-
-//     AgeCalculate(){
-//         return `${this.firstName} age is ${2024 - this.BornYear}`;
-//     }
-
-//     personDetails(){
-//         return `Person name is ${this.firstName} ${this.lastName} and your age is ${2024 - this.BornYear}`
-//     }
-// }
-
-// console.log(CreateUser.prototype);
-
-// const person1 = new CreateUser("chandan","thakur","abc@gmail.com",2000);
-
-// console.log(person1.AgeCalculate());
-// console.log(person1.personDetails());
-
-// tow class assimble in extends keyword
-
-// class rating extends CreateUser {
-
-//     constructor(rating, firstName, lastName, gmail, BornYear){
-
-//         super(firstName, lastName, gmail, BornYear);
-
-//         this.rating = rating;
-
-//     }
-
-//     get PersonRating(){
-//         return `Person name is ${this.firstName} and rating ${this.rating}`;
-//     }
-
-// }
-
-// const person1 = new rating(5 ,"chandan","thakur","abc@gmail.com",2000);
-
-// console.log(person1);
-// console.log(person1.PersonRating);
-
-// console.log(person1.AgeCalculate());
-
-
-
 // question 1
-const chandan = {
-   name: "Chandan Thalur",
+const simpleObject = {
+   name: "Chandan Thakur",
+   email: "chandan7073251686@gmail.com",
+   password: "Cha12@thakur",
    age: 22,
-   address: "Sodala",
-   phone: 7073251686
+   getAge() {
+      return this.age;
+   },
+   getEmail() {
+      return this.email
+   }
+
 }
 
+console.log(simpleObject);
+console.log(simpleObject.__proto__);
+console.log(simpleObject.getAge());
+console.log(simpleObject.getEmail());
 
-// console.log(chandan);
-// console.log(chandan.prototype);
-// console.log(chandan.__proto__);
+// question 8
+const objectMethod = {
+   AgeCalculate: function(){
+      return `Your age is ${2024 - this.BornYear}`      
+   },
+   details: function(){
+      return `Person name is ${this.firstName} ${this.lastName} and person age is ${2024-this.BornYear}`;
+   }
+}
+
+function abc(firstName, lastName, gmail, BornYear){
+   const obj = {};
+   obj.firstName = firstName;
+   obj.lastName = lastName;
+   obj.gmail = gmail;
+   obj.BornYear = BornYear;
+   // obj.AgeCalculate = function(){
+   //    return `Your age is ${2024- this.BornYear}`
+   // };
+   // obj.details = function(){
+   //    return `Person name is ${this.firstName} ${this.lastName} and your age is ${2024-this.BornYear}`;
+   // }
+   obj.AgeCalculate = objectMethod.AgeCalculate;
+   obj.details = objectMethod.details;
+
+
+   return obj;
+}
+
+const chandanThakur = abc("chandan", "thakur", "chandan@gmail.con", "2002");
+console.log(chandanThakur);
+console.log(chandanThakur.AgeCalculate());
+console.log(chandanThakur.details());
+
+// question 9
+function mockUser(firstName, lastName, email, BornYear){
+   const obj = Object.create(mockUser.prototype);
+
+   obj.firstName = firstName;
+   obj.lastName = lastName;
+   obj.email = email;
+   obj.BornYear = BornYear;
+
+   return obj;
+}
+
+const raviGupta = mockUser("ravi","gupta", "abc@gmail.com", 25);
+console.log(raviGupta);
+
+mockUser.prototype.AgeCalculate = function(){
+    return `Your age is ${2024 - this.BornYear}`
+};
+
+mockUser.prototype.details = function (){
+   return `Person name is ${this.firstName} ${this.lastName} and person age is ${2024-this.BornYear}`;   
+}
+
+console.log(raviGupta.AgeCalculate());
+console.log(raviGupta.details());
 
 
 
 // question 2
 const mydate = new Date();
+const time = mydate.getTime();
 
-// console.log(mydate.getTime());
-
-mydate.getTime = function(){
-   return `This time is wromg`;
+mydate.getTime = function () {
+   return `This is my date 20-02-2024`;
 }
 
-// console.log(mydate.getTime());
-
-const myfunction = mydate.getTime();
-// console.log(myfunction);
-
+console.log(mydate.getTime());
 
 // question 3
 const object = {
-   getValue() {
-      return this.value;
+   getAge() {
+      return this.age;
    },
-   getAddValue() {
-      return this.value * 5;
+   getEmail() {
+      return this.email
    }
 }
 
-function val(value){
-   this.value = value
+function person(name, email, password, age) {
+   this.name = name;
+   this.email = email;
+   this.password = password;
+   this.age = age;
 }
 
-Object.assign(val.prototype, object);
+Object.assign(person.prototype, object);
 
-const a = new val(4);
-// console.log(a.getValue());
+const chandan = new person("chandan", "avc@gmail.com", "cha12@thakue", 22);
+console.log(chandan);
+console.log(chandan.getAge());
+console.log(chandan.getEmail());
 
-const b = new val(10);
-// console.log(b.getAddValue());
 
 // question 4
-const o = {
-   a:1,
-   b:2,
+const objectProtoype = {
+   a: 1,
+   b: 2,
    __proto__: {
-      b:3,
-      c:4,
+      b: 2,
+      c: 3,
+      d: 4,
       __proto__: {
-         d:5
+         e: 5
       }
    },
 }
 
-// console.log(o);
-
-// console.log(o.a);
-// console.log(o.b);
-// console.log(o.c);
-// console.log(o.d);
-
+console.log(objectProtoype);
+console.log(objectProtoype.a);
+console.log(objectProtoype.b);
+console.log(objectProtoype.c);
+console.log(objectProtoype.d);
+console.log(objectProtoype.e);
 
 // question 5
-const object1  = {
-   value: 1,
-   getValue(){
-      return this.value + 5;
+const objectQuestion5 = {
+   name: "Chandan Thakur",
+   email: "chandan7073251686@gmail.com",
+   password: "Cha12@thakur",
+   age: 22,
+   getAge(val) {
+
+      let filter = this.age + val;
+      if (isNaN(filter)) {
+         return "Enter only number";
+      } else {
+         return filter;
+      }
+
+
+   },
+   getEmail() {
+      return this.email
    }
 }
 
-const person = {
-   name: "chandan thakur",
-   age: 22,
-   __proto__: object1
+const user = {
+   __proto__: objectQuestion5
 }
 
-console.log(object1);
-console.log(person);
+console.log(user.getAge(5));
 
-person.value = 10;
+const userArrayPrototype = {
+   getAge(val) {
 
-let abc = person.getValue();
-// console.log(abc);
+      let filter = this.age + val;
+      if (isNaN(filter)) {
+         return "Enter only number";
+      } else {
+         return filter;
+      }
 
 
-const ravi = {
-   name: "Chandan Thalur",
-   age: 22,
-   address: "Sodala",
-   phone: 7073251686
+   }
 }
 
-const prototype = {
+// without prototype
+// const userArray = [
+//    {
+//       name: "chandan Thakur", email: "abc@gmail.com", password: "Cha12@thakur", age: 22, getAge(val) {
+
+//          let filter = this.age + val;
+//          if (isNaN(filter)) {
+//             return "Enter only number";
+//          } else {
+//             return filter;
+//          }
+
+
+//       }
+//    },
+//    {
+//       name: "ravi", email: "xyz@gmail.com", password: "gffgfjdgd", age: 23, getAge(val) {
+
+//          let filter = this.age + val;
+//          if (isNaN(filter)) {
+//             return "Enter only number";
+//          } else {
+//             return filter;
+//          }
+
+
+//       }
+//    },
+//    {
+//       name: "kavi", email: "fggffh@gmail.com", password: "ghfgfhg", age: 18, getAge(val) {
+
+//          let filter = this.age + val;
+//          if (isNaN(filter)) {
+//             return "Enter only number";
+//          } else {
+//             return filter;
+//          }
+
+
+//       }
+//    },
+//    {
+//       name: "tilak", email: "fyjhdh@gmail.com", password: "Cha12@thakur", age: 16, getAge(val) {
+
+//          let filter = this.age + val;
+//          if (isNaN(filter)) {
+//             return "Enter only number";
+//          } else {
+//             return filter;
+//          }
+
+
+//       }
+//    }
+// ]
+
+// with prototype
+const userArray = [
+   {
+      name: "chandan Thakur", email: "abc@gmail.com", password: "Cha12@thakur", age: 22, __proto__: userArrayPrototype,
+   },
+   {
+      name: "ravi", email: "xyz@gmail.com", password: "gffgfjdgd", age: 23, __proto__: userArrayPrototype
+   },
+   {
+      name: "kavi", email: "fggffh@gmail.com", password: "ghfgfhg", age: 18, __proto__: userArrayPrototype
+   },
+   {
+      name: "tilak", email: "fyjhdh@gmail.com", password: "Cha12@thakur", age: 16, __proto__: userArrayPrototype
+   }
+]
+
+
+console.log(userArray[3].getAge(5));
+
+// question 6
+function userCreate(name, email, password, age){
+   this.name = name;
+   this.email = email;
+   this.password = password;
+   this.age = age
+}
+
+userCreate.prototype.getAge = function(val){
+   let filter = this.age + val;
+      if (isNaN(filter)) {
+         return "Enter only number";
+      } else {
+         return filter;
+      }
+};
+
+const ravi = new userCreate("chandan", "xyz@gmail.com", "cha12@thakur", 22);
+console.log(ravi.getAge(10));
+
+
+// question 7
+class User {
+   constructor(name, email, password, age) {
+      this.name = name;
+      this.email = email;
+      this.password = password;
+      this.age = age;
+   }
+
+   // method create
    getAge(val){
-      return `val +  5`;
+      return this.age + val;
    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const kavi = new User("kavi", "abc@gmail.com", "jfhdfg", 12);
+console.log(kavi);
+console.log(kavi.getAge(5));
 
