@@ -293,3 +293,38 @@ const kavi = new User("kavi", "abc@gmail.com", "jfhdfg", 12);
 console.log(kavi);
 console.log(kavi.getAge(5));
 
+
+// check
+const mocUser = [
+   {id: 1, username: "chandan thakur", displayName: "Stak"},
+   {id: 2, username: "ravi gupta", displayName: "Lathi"},
+   {id:3, username: "kavi gupta", displayName: "Kallu"}
+];
+
+// ab id pata ho to mannull kar sakte h
+const newUser = {id:4, username: "tilak", displayName: "Pagal  "};
+mocUser.push(newUser);
+
+
+// kyo client ko to id dhoei ka pata hoga client to username out\r displayname ki dale ga to hame id autmaticall dalana parega
+const newUser1 = {id: mocUser[mocUser.length-1].id+1, username: "rahul", displayName: "Khati"};
+mocUser.push(newUser1);
+
+console.log(mocUser);
+
+// id 3 ka all object access: find user 3
+const usreID = 3;
+const userfind = mocUser.find((val) => val.id === usreID);
+console.log(userfind);
+
+
+// put requeat
+const parsentId = 4;
+
+const findIndex = mocUser.findIndex((val) => val.id === parsentId);
+
+mocUser[findIndex] = {id: parsentId, username: "freen", displayName: "Naina"}
+
+console.log(mocUser);
+
+
